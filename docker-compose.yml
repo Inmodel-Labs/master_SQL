@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  sql-lab:
+    build: .
+    container_name: master_sql_lab
+    volumes:
+      - .:/app
+    tty: true
+    stdin_open: true
+    working_dir: /app
+    command: /bin/bash
