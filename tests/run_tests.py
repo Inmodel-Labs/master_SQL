@@ -108,6 +108,7 @@ def update_progress(db, ex_id, passed):
 
 def main(target_file=None):
     print("--- SQL LAB INTELLIGENT AUTOGRADER ---")
+    all_passed = True
     db_path = 'data/lab.db'
     if not os.path.exists(db_path):
         print("Error: data/lab.db not found. Run 'python3 lab.py setup' first.")
@@ -142,7 +143,12 @@ def main(target_file=None):
             hint = get_diagnostic_hint(expected_res, expected_cols, actual_res, actual_cols)
             print(f"    💡 HINT: {hint}")
             update_progress(db_path, lesson, False)
+            all_passed = False
+    
+    return all_passed
 
 if __name__ == "__main__":
     target = sys.argv[1] if len(sys.argv) > 1 else None
-    main(target)
+    success = main(target)
+    if not success:
+        sys.exit(1)
