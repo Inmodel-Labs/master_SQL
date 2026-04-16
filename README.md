@@ -1,56 +1,44 @@
-# 🎓 SQL Master Class (40 Exercises)
+# 🎓 SQL Master Class: 40-Page Journey
 
-Welcome to the Master SQL Research Lab. This lab is a professional-grade SQL training course covering 40 exercises inspired by standard SQL curricula (e.g., "Learning SQL").
+Welcome to the **SQL Master Class**, a professional training curriculum designed to take students from absolute SQL beginners to advanced data analysts. This lab uses an **Intelligent Tutoring System** to provide real-time feedback and diagnostic hints.
 
-## 🚀 Quick Start (Terminal)
+## 🚀 Quick Start
 
-The lab features a unified controller script `lab.py`.
-
-1.  **Initialize the Environment**:
+1.  **Initialize the Lab**:
     ```bash
     python3 lab.py setup
     ```
-2.  **Check Connection**:
-    ```bash
-    python3 lab.py status
-    ```
-3.  **Monitor Your Progress**:
+2.  **Check your Rank**:
     ```bash
     python3 lab.py score
     ```
+3.  **Start Learning**: Open [exercises/01_Intro_to_Select.sql](exercises/01_Intro_to_Select.sql) and follow the instructions.
 
-## 📝 How to Complete the Lab
+## 📖 The Curriculum
+The course is divided into 8 modules across 40 standalone "pages":
+- **Module 1-2**: Basic Retrieval & Sorting (Pages 01-10)
+- **Module 3-4**: Advanced Filtering, Nulls & Strings (Pages 11-20)
+- **Module 5-6**: Aggregations, Groups & Joins (Pages 21-30)
+- **Module 7-8**: Subqueries & Advanced Analytics (Pages 31-40)
 
-The lab is divided into 4 levels in the `exercises/` folder:
+## 📊 Interactive Progress Tracking
+Use the `lab.py` controller for a premium learning experience:
+- `python3 lab.py status`: Verify database health and connectivity.
+- `python3 lab.py test XX`: Validate your solution for Page XX and receive **Intelligent Diagnostic Hints**.
+- `python3 lab.py score`: View your RPG-style **Rank** (from Coffee Intern to Master of Data) and module-wise progress.
+- `python3 lab.py explain XX`: View the logical execution flow of a query (how the database engine actually thinks).
 
-- **Level 1: Basics** (SELECT, Aliasing, Limits)
-- **Level 2: Filtering & Sets** (BETWEEN, LIKE, UNION)
-- **Level 3: Joins & Aggregations** (Inner/Left/Self Joins, GROUP BY)
-- **Level 4: Advanced Analytics** (Subqueries, CTEs, Window Functions)
+## 🎓 GitHub Classroom Autograding
+This repository is fully configured for automated grading:
+- **Automatic Grading**: Every time you `git push` your work, the autograder runs on GitHub.
+- **Feedback**: Visit the **Actions** tab in your repository to see your detailed grading report.
+- **Pass Criteria**: You must pass all 40 exercises to achieve the "Master of Data" certification.
 
-### Workflow:
-1.  Open an exercise file in VS Code (e.g., `exercises/Level_1_Basics.sql`).
-2.  Read the **PROBLEM** and **ANALYSIS** for the task.
-3.  Write your query under the `-- TODO` marker.
-4.  Validate your solution from the terminal:
-    ```bash
-    python3 lab.py test
-    ```
-    *You can also test a specific level: `python3 lab.py test Level_1_Basics`*
-
-## 🐳 Running with Docker
-
-If you prefer an isolated environment:
-1.  **Build and Start**:
-    ```bash
-    docker-compose up -d
-    ```
-2.  **Run Commands Inside Container**:
-    ```bash
-    docker exec -it master_sql_lab python3 lab.py status
-    ```
-
-## 📊 Grading & Feedback
-The terminal `score` command tracks your marks in real-time. Each exercise is validated against reference result sets to ensure your logic is sound.
+## 🐳 Docker Support
+For a pre-configured environment, run:
+```bash
+docker-compose up -d
+docker exec -it master_sql_lab python3 lab.py status
+```
 
 Happy Querying! 🚀
