@@ -130,6 +130,7 @@ def main(target_file=None):
         if not student_q:
             print("FAIL (No query found)")
             update_progress(db_path, lesson, False)
+            all_passed = False
             continue
             
         expected_res, expected_cols = run_query(db_path, sol_q)

@@ -111,7 +111,9 @@ def main():
         setup_lab.setup_database()
     elif args.command == 'test':
         from tests import run_tests
-        run_tests.main(args.target)
+        success = run_tests.main(args.target)
+        if not success:
+            sys.exit(1)
     elif args.command == 'explain':
         explain_lesson(args.target)
 
